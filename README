@@ -1,3 +1,9 @@
-Doctor Project
+Doctor
 
-An extensible XMPP doctor written in Python 3 and based on SleekXMPP
+An extensible XMPP Bot written in Python 3
+- based on SleekXMPP
+
+-------------
+
+Edit config.py to change the settings
+Example scripts (and working ones) are added too.
