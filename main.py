@@ -101,11 +101,10 @@ if __name__ == '__main__':
 
     xmpp = Doctor("Doctor", "somePass")
 
-    xmpp.registerPlugin('xep_0030')
-    xmpp.registerPlugin('xep_0004')
-    xmpp.registerPlugin('xep_0060')
-    xmpp.registerPlugin('xep_0199')
-    xmpp.registerPlugin('xep_0045')
+    xmpp.registerPlugin('xep_0030') # Service Discovery
+    xmpp.registerPlugin('xep_0004') # Data Forms
+    xmpp.registerPlugin('xep_0199') # XMPP Ping
+    xmpp.registerPlugin('xep_0045') # XMPP MUC
 
     if xmpp.connect(config.SERVER):
         xmpp.process(threaded=True)
