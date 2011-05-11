@@ -1,9 +1,22 @@
 Doctor
 
 An extensible XMPP Bot written in Python 3
-- based on SleekXMPP
+- based on the SleekXMPP module
+
+The built-in "Plugin Manager" enables you to load/reload plugins on the fly as the bot is running, simply write:
+".load example" to the bot, and it will load "example.py" in the "scripts" directory.
+
+There is also .reload and .unload (self explanatory)
 
 -------------
 
 Edit config.py to change the settings
 Example scripts (and working ones) are added too.
+
+Requirements:
+
+- Python 3.x → http://python.org
+- SleekXMPP → https://github.com/fritzy/SleekXMPP
+
+Features:
+- Plugin Support (loading/reloading during runtime)
