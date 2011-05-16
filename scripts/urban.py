@@ -20,6 +20,6 @@ class mod:
             res = json.loads(page.read().decode('utf-8'))['list'][0]
 
             res['definition'] = res['definition'][:130]
-            self.bot.say('Term: %(word)s Definition: %(definition)s' % res)
+            self.bot.say('Term: %(word)s Definition: %(definition)s' % res, msg['from'].bare)
         except:
-            self.bot.say('Does not compute')
+            self.bot.say('Does not compute', msg['from'].bare)

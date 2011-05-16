@@ -33,4 +33,4 @@ class mod:
             result=data[begin+len(start):begin+data[begin:].index(end)]
             result = result.replace('\\xa0', ',').replace('<font size=-2> </font>', ',').replace(' &#215; 10<sup>', 'E').replace('</sup>','')
 
-            self.bot.say(result)
+            self.bot.say(result, msg['from'].bare)

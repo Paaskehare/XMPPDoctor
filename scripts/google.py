@@ -21,7 +21,6 @@ class mod:
             h = html.parser.HTMLParser()
 
             result['titleNoFormatting'] = h.unescape(result['titleNoFormatting'])
-
-            self.bot.say('Google: %(titleNoFormatting)s - %(unescapedUrl)s' % result)
+            self.bot.say('Google: %(titleNoFormatting)s - %(unescapedUrl)s' % result, msg['from'].bare)
         except:
-            self.bot.say('No results returned.')
+            self.bot.say('No results returned.', msg['from'].bare)

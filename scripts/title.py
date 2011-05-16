@@ -78,4 +78,4 @@ class mod:
                 title = urlLookup(url)
 
             if title:
-                self.bot.say(title)
+                self.bot.say(title, msg['from'].bare)

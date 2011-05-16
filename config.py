@@ -1,16 +1,17 @@
 #!/usr/bin/python
 # coding: utf-8
 
-SERVER = 'example.server.org', 5222
+SERVER = 'server.example.org', 5222
 
+# Nickname of the bot
 NICKNAME = 'Doctor'
 
-# Not yet supported:
+# List of channels to join on connect
 MUC_CHANNELS = [
-  '',
-  '',
+  'channel@conference.example.org',
 ]
 
+# Plugins to load at startup
 PLUGINS = [
   'title',
   'calc',

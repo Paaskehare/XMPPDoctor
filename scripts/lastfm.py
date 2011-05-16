@@ -40,7 +40,7 @@ class mod:
             info = lastfm(user)
 
             if info:
-                self.bot.say('LastFM: %(artist)s - %(track)s' % info)
+                self.bot.say('LastFM: %(artist)s - %(track)s' % info, msg['from'].bare)
 
         except:
             print('EXCEPTION!!!')
@@ -64,4 +64,4 @@ class mod:
             page = urlopen(url)
             p = str(page.read())
             res = p.replace('"', '').replace('\\', '')
-            self.bot.say('LastFM: %s - %s @ %s' % (info['artist'], info['track'], res))
+            self.bot.say('LastFM: %s - %s @ %s' % (info['artist'], info['track'], res), msg['from'].bare)

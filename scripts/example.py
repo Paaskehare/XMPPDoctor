@@ -8,5 +8,5 @@ class mod:
         self.bot.say('"%s" successfully loaded' % MODULE_NAME)
 
     def test(self, msg, cmd):
-        self.bot.say('hej, du skrev: %s' % ' '.join(cmd[1:]))
+        self.bot.say('hej, du skrev: %s' % ' '.join(cmd[1:]), msg['from'].bare)
 

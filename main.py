@@ -46,8 +46,8 @@ class Doctor(sleekxmpp.ClientXMPP):
 
         sleekxmpp.ClientXMPP.__init__(self, jid, password)
         self.muc = None
-        self.muc_room = 'code@conference.nordic-t.org'
-        self.muc_nick = config.NICKNAME
+        self.muc_channels = config.MUC_CHANNELS
+        self.nickname = config.NICKNAME
         self.commands = {}
 
         self.add_event_handler('session_start', self.start)
@@ -61,7 +61,8 @@ class Doctor(sleekxmpp.ClientXMPP):
         self.getRoster()
 
         self.muc = self.plugin['xep_0045']
-        self.muc.joinMUC(self.muc_room, self.muc_nick)
+        for channel in self.muc_channels:
+            self.muc.joinMUC(channel, self.nickname)
         self.pm = PluginManager(self)
 
     def register_cmd(self, cmd, f):
@@ -88,7 +89,7 @@ class Doctor(sleekxmpp.ClientXMPP):
                 pass
 
     def say(self, body, to=''):
-        if not to: to=self.muc_room
+        if not to: to=self.muc_rooms[0]
         msg = sleekxmpp.Message()
         msg['type'] = 'groupchat'
         msg['to'] = to
